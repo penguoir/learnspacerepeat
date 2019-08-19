@@ -1,8 +1,9 @@
 import * as moment from 'moment'
 
 /**
-  * @param {Integer} daysSinceLastRevision
+  * @param {Integer} lastRevision
   * @param {Integer} numberOfRevisions
+  * @param {Boolean} isReturnNumber should return the number of days to next revision? (default returns date)
   * 
   * @returns {Integer} The number of days untill the next revision, 0 or negative if today or overdue.
 */

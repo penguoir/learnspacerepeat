@@ -1,13 +1,10 @@
 import React, { useState } from 'react'
 import { useCollection } from 'react-firebase-hooks/firestore'
-import * as firebase from 'firebase'
-import initFirebase from '../helpers/firebaseInit'
-import TopicCard from './TopicCard';
-import TopicItem from './TopicItem';
+import firebase from '../helpers/firebaseInit'
+import Topic from './Topic';
 import calculateNextRevision from '../helpers/calculateNextRevision';
 
 export default ({ id }) => {
-  initFirebase()
 
   const [topic, setTopic] = useState('')
 
@@ -30,18 +27,16 @@ export default ({ id }) => {
       <h2 className="h5 mb-3 text-gray-800">Today</h2>
       { loading && 'Loading...' }
 
-      <div className="row">
+      <div className="list-group">
         { value && (
           value.docs.map(doc => {
             let daysToNextRevision =
               calculateNextRevision(doc.data().lastRevision.toDate(), doc.data().numberOfRevisions, true)
-            
-            console.log({daysToNextRevision})
 
-            if (daysToNextRevision <= 0) {
-              return <TopicCard daysToNextRevision={daysToNextRevision} path={doc.ref.path} key={doc.id} id={doc.id} {...doc.data()} />
+            if (daysToNextRevision < 1) {
+              return <Topic doc={doc} />
             } else {
-              return ''
+              return <></>
             }
           })
         ) }
@@ -65,7 +60,7 @@ export default ({ id }) => {
       <div className="list-group">
         { value && (
           value.docs.map(doc => (
-            <TopicItem key={doc.id} path={doc.ref.path} {...doc.data()} />
+            <Topic key={doc.id} doc={doc} />
           ))
         )}
       </div>
