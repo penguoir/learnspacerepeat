@@ -10,3 +10,19 @@ body {
 .page-footer {
   flex-shrink: none;
 }
+
+.underline-on-hover {
+  cursor: pointer;
+}
+
+.underline-on-hover:hover {
+  text-decoration: underline dashed var(--gray)
+}
+
+.underline-on-hover i {
+  visibility: hidden
+}
+
+.underline-on-hover:hover i {
+  visibility: visible
+}

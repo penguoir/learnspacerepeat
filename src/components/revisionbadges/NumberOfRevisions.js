@@ -2,9 +2,6 @@ import React from 'react'
 
 export default ({ numberOfRevisions }) => {
   const _getColour = numberOfRevisions => {
-    if (numberOfRevisions > 5)
-      return '#43a047'
-
     switch (numberOfRevisions) {
       case 0:
         return '#b71c1c' // dark red
@@ -13,15 +10,13 @@ export default ({ numberOfRevisions }) => {
       case 2:
         return '#fb8c00' // orange
       case 3:
-        return '#ffb300' // light orange
+        return '#ffb300' // orange-yellow
       case 3:
         return '#fbc02d' // yellow
       case 4:
-        return '#afb42b' // yellow green
-      case 5:
-        return '#43a047' // green
+        return '#afb42b' // yellow-green
       default:
-        return ''
+        return '#43a047' // green
     }
   }
 
