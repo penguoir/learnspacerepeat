@@ -36,9 +36,9 @@ export default ({ doc }) => {
         <div className="col-md-3 text-right p-0">
           <div className="btn-group" role="group">
             <button onClick={_setDone} className="btn btn-light">
-                <i className="fas fa-check"></i></button>
+                <i className="fas fa-check text-success"></i></button>
             <button onClick={_deleteMe} className="btn btn-light">
-              <i className="fas fa-trash"></i></button>
+              <i className="fas fa-trash text-danger"></i></button>
           </div>
         </div>
       </div>
