@@ -1,5 +1,5 @@
 import React from 'react'
-import * as moment from 'moment'
+import moment from 'moment'
 import calendar from './calendar'
 
 export default ({ lastRevision }) => {

@@ -2,12 +2,16 @@
   "name": "learnspacerepeat",
   "version": "0.0.0",
   "dependencies": {
+    "enzyme": "^3.10.0",
+    "enzyme-adapter-react-16": "^1.14.0",
     "firebase": "^6.4.0",
+    "jest-enzyme": "^7.1.0",
     "moment": "^2.24.0",
     "react": "^16.9.0",
     "react-dom": "^16.9.0",
     "react-firebase-hooks": "^2.1.0",
-    "react-scripts": "3.1.1"
+    "react-scripts": "3.1.1",
+    "react-test-renderer": "^16.9.0"
   },
   "scripts": {
     "start": "react-scripts start",
